@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -g
 
 hunt: hunt.c
 	$(CC) $(CFLAGS) -o hunt hunt.c
