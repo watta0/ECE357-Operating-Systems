@@ -101,13 +101,8 @@ int tree(const char entry_path[], int trgt_fd, const struct stat *trgt_st) {
 
 		int len;
 
-		if (entry_path[strlen(entry_path) - 1] == '/') {
-			len = snprintf(curr_path, sizeof(curr_path), "%s%s",
+		len = snprintf(curr_path, sizeof(curr_path), "%s/%s",
 				       entry_path, dentry->d_name);
-		} else {
-			len = snprintf(curr_path, sizeof(curr_path), "%s/%s",
-				       entry_path, dentry->d_name);
-		}
 
 		if (len < 0 || (size_t)len >= sizeof(curr_path)) {
 			fprintf(stderr,
